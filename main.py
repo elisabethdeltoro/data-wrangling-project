@@ -1,15 +1,6 @@
-#  1) Aggregate all records in “2021 Special Generals” into one aggregate “2021_special_generals.csv” file 
-# with the same columns and all rows from all files in the folder “2021 Special Generals” – and likewise for “2021 Special Primaries” 
-
-# 2) These elections were in non-overlapping districts, so it shouldn’t be possible for one voter to appear in the data 
-# for more than one General election, or more than one Primary election (many will appear once each in the Primaries & Generals, of course). 
-# However, we want to verify this. Validate that there are no duplicated voters within each aggregated dataset (“2021 Special Generals” 
-# and “2021 Special Primaries”). Voters are considered duplicated if their “VOTER ID” appears twice within a dataset (“dataset” meaning all 
-# primaries, or all generals). If there are duplicates, please print out (in the command-line) the rows that are duplicated; if there are not, 
-# print out “No Duplicates Found in [Dataset Name]!”. 
-
 import pandas as pd
 
+#PART ONE
 # excel files as individual data frames (Special Generals)
 sg1 = pd.read_excel('21sg\Central Falls - 11-02-2021.xlsx')
 sg2 = pd.read_excel('21sg\Lincoln - 09-07-2021.xlsx')
@@ -37,7 +28,6 @@ sp = pd.concat([sp1, sp2, sp3])
 sp.to_csv('2021_special_primaries.csv', index=False)
 
 #PART TWO
-
 # check for duplicate VOTER IDs (Special Generals)
 duplicateRowsSG = sg[sg.duplicated(['VOTER ID'])]
 
