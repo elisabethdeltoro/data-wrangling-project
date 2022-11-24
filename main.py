@@ -33,7 +33,7 @@ duplicateRowsSG = sg[sg.duplicated(['VOTER ID'])]
 
 #view duplicate rows if any (Special Generals)
 if duplicateRowsSG.empty:
-     print("No Duplicates Found in Special Generals")
+     print("No Duplicates Found in Special Generals!")
 else: 
     print(duplicateRowsSG)
 
@@ -42,6 +42,6 @@ duplicateRowsSP = sp[sp.duplicated(['VOTER ID'])]
 
 #view duplicate rows if any (Special Primaries)
 if duplicateRowsSP.empty:
-     print("No Duplicates Found in Special Primaries")
+     print("No Duplicates Found in Special Primaries!")
 else: 
     print(duplicateRowsSP)
